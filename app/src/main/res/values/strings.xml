@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Cadastro</string>
+
+    <string name="et_name">Nome</string>
+    <string name="et_email">E-mail</string>
+    <string name="et_phone">Telefone</string>
+    <string name="et_address">Endereço</string>
+    <string name="et_site">Site</string>
+
+    <string name="btn_save">Salvar</string>
+</resources>
