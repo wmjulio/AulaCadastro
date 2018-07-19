@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 Person p;
 
                 p = (Person) parent.getItemAtPosition(position);
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
                 intent.putExtra("selectedPerson", p);
                 startActivity(intent);
+
             }
         });
 
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadList(){
+
         PersonDAO personDAO = new PersonDAO(this);
 
         List<Person> people = personDAO.getList();
@@ -64,12 +67,16 @@ public class MainActivity extends AppCompatActivity {
         PersonAdapter personAdapter = new PersonAdapter(people, this);
 
         this.myList.setAdapter(personAdapter);
+
     }
-    /*
+
     @Override
     protected void onResume() {
+
         loadList();
+
         super.onResume();
+
     }
-    */
+
 }

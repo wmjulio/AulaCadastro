@@ -1,6 +1,7 @@
 package pos.unipe.com.br.cadastro.service;
 
 import android.widget.EditText;
+import android.widget.Toast;
 
 import pos.unipe.com.br.cadastro.DetailsActivity;
 import pos.unipe.com.br.cadastro.R;
@@ -19,7 +20,9 @@ public class DetailsHelper {
     private Person person;
 
     public DetailsHelper(DetailsActivity da) {
+
         this.da = da;
+        this.person = new Person();
 
         this.etName = da.findViewById(R.id.idName);
         this.etPhone = da.findViewById(R.id.idPhone);
@@ -29,22 +32,25 @@ public class DetailsHelper {
     }
 
     public Person pickPerson(){
+
         person.setName(etName.getText().toString());
         person.setPhone(etPhone.getText().toString());
         person.setEmail(etEmail.getText().toString());
         person.setAddress(etAddress.getText().toString());
         person.setSite(etSite.getText().toString());
 
-        return person;
+        return this.person;
     }
 
-    public void putPerson(Person p){
-        this.person = p;
+    public void putPerson(Person person){
+
         etName.setText(person.getName());
         etPhone.setText(person.getPhone());
         etEmail.setText(person.getEmail());
         etAddress.setText(person.getAddress());
         etSite.setText(person.getSite());
+
+        this.person = person;
     }
 
 

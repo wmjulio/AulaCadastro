@@ -10,6 +10,13 @@ public class Person implements Serializable {
     private String address;
     private String site;
 
+    public Person(){
+        this.name = new String();
+        this.email = new String();
+        this.phone = new String();
+        this.address = new String();
+        this.site = new String();
+    }
 
 
     public Long getId() {

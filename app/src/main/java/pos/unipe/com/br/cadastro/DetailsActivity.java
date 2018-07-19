@@ -37,11 +37,12 @@ public class DetailsActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Person p = helper.pickPerson();
 
                 PersonDAO personDAO = new PersonDAO(DetailsActivity.this);
 
-                if(person.getId() == null){
+                if(p.getId() == null){
                     personDAO.insertPerson(p);
                 }else{
                     personDAO.updatePerson(p);
@@ -50,6 +51,7 @@ public class DetailsActivity extends AppCompatActivity {
                 personDAO.close();
 
                 finish();
+
             }
         });
 
